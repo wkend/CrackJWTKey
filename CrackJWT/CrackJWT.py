@@ -10,7 +10,7 @@ class CommonLine():
 | (__ | |   | (_| || (__ |   <  /\__/ /\  /\  /  | |  
  \___||_|    \__,_| \___||_|\_\ \____/  \/  \/   \_/  
                                                       
-github:                                                     
+github: https://github.com/wkend/CrackJWTKey                                                    
 '''
     def __init__(self,argvs=None):
         pass
