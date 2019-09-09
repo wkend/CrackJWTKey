@@ -1,32 +1,60 @@
 #!/usr/bin/env python 3.5
 # -*- coding: utf-8 -*-
 
-class CommonLine():
-    _text = '''
-                          _        ___  _    _  _____ 
-                         | |      |_  || |  | ||_   _|
-  ___  _ __   __ _   ___ | | __     | || |  | |  | |  
- / __|| '__| / _` | / __|| |/ /     | || |/\| |  | |  
-| (__ | |   | (_| || (__ |   <  /\__/ /\  /\  /  | |  
- \___||_|    \__,_| \___||_|\_\ \____/  \/  \/   \_/  
-                                                      
-github: https://github.com/wkend/CrackJWTKey                                                    
-'''
-    def __init__(self,argvs=None):
-        pass
-
-    def run(self):
-        print(self._text)
+import sys
+import jwt
+import termcolor
+from colorama import init
 
 
+init(autoreset=True)
+def check_input():
+    """检查输入"""
+    if len(sys.argv) != 3:
+        print("Usage: "+sys.argv[0]+" jwt_str"+" passwd.txt")
+        exit(1)
 
-def main():
-    try:
-        cmd = CommonLine()
-        cmd.run()
-    except KeyboardInterrupt:
-        pass
+
+def print_sign():
+    BANNER = r"""   
+                              _        ___  _    _  _____ 
+                             | |      |_  || |  | ||_   _|
+      ___  _ __   __ _   ___ | | __     | || |  | |  | |  
+     / __|| '__| / _` | / __|| |/ /     | || |/\| |  | |  
+    | (__ | |   | (_| || (__ |   <  /\__/ /\  /\  /  | |  
+     \___||_|    \__,_| \___||_|\_\ \____/  \/  \/   \_/  
+                                                          (v 1.0)                                               
+    """
+    print(BANNER)
+
+
+def crack_key():
+    """爆破jwt秘钥"""
+    jwt_str = sys.argv[1]
+    passwd = sys.argv[2]
+    with open(passwd) as f:
+        for line in f:
+            key = line.strip()
+            try:
+                jwt.decode(jwt_str,verify=True,key=key)
+                print(termcolor.colored(r"[+]","green"),"found key successfully-->",termcolor.colored(key,"green"))
+                break
+            except (
+                    jwt.exceptions.ExpiredSignatureError, jwt.exceptions.InvalidAudienceError,
+                    jwt.exceptions.InvalidIssuedAtError,
+                    jwt.exceptions.InvalidIssuedAtError, jwt.exceptions.ImmatureSignatureError
+            ):
+                print(r"[+] found key successfully-->",termcolor.colored(key,"green"))
+                break
+            except jwt.exceptions.InvalidSignatureError:
+                print(r"[+] try key -->", key,","*10)
+                continue
+        else:
+            print(r"[+] Done! no key was found\n")
+
 
 
 if __name__ == '__main__':
-    main()
+    check_input()
+    print_sign()
+    crack_key()
