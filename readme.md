@@ -4,7 +4,7 @@
 ## 示例
 ```
 python3 CrackJWT.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmFuYS
-IsImFjdGlvbiI6InVwbG9hZCJ9.56wwCrB9tIgmUnYpLPxkO8GYj1soCjuu_skTlbH_Gg8 ../test/passwd.txt
+IsImFjdGlvbiI6InVwbG9hZCJ9.56wwCrB9tIgmUnYpLPxkO8GYj1soCjuu_skTlbH_Gg8 passwd.txt
 
                               _        ___  _    _  _____
                              | |      |_  || |  | ||_   _|
