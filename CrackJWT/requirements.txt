@@ -1,0 +1,8 @@
+cffi==1.13.2
+colorama==0.4.1
+cryptography==2.8
+jwt==0.6.1
+pycparser==2.19
+PyJWT==1.7.1
+six==1.13.0
+termcolor==1.1.0
