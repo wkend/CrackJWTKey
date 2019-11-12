@@ -44,7 +44,7 @@ def crack_key():
                     jwt.exceptions.InvalidIssuedAtError,
                     jwt.exceptions.InvalidIssuedAtError, jwt.exceptions.ImmatureSignatureError
             ):
-                print(r"[+] found key successfully-->",termcolor.colored(key,"green"))
+                print(r"[+] found key successfully!!!  -->",termcolor.colored(key,"green"))
                 break
             except jwt.exceptions.InvalidSignatureError:
                 print(r"[+] try key -->", key,","*10)
