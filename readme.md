@@ -11,8 +11,7 @@ python3 CrackJWT.py jwt_str keys.txt
 ```
 ## 示例
 ```
-python3 CrackJWT.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibmFuYS
-IsImFjdGlvbiI6InVwbG9hZCJ9.56wwCrB9tIgmUnYpLPxkO8GYj1soCjuu_skTlbH_Gg8 passwd.txt
+PS C:\tools\redTeam\passCrack\CrackJWTKey-master\CrackJWTKey-master\CrackJWT> python3 .\CrackJWT.py eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzkzNzM3NjYsInVzZXJuYW1lIjoiMTIzNHF3ZXIifQ.voh3bgfKO46Om8s7yQBlyaD2YXnQXjUa5lQyGXrlecQ .\keys.txt
 
                               _        ___  _    _  _____
                              | |      |_  || |  | ||_   _|
@@ -20,16 +19,15 @@ IsImFjdGlvbiI6InVwbG9hZCJ9.56wwCrB9tIgmUnYpLPxkO8GYj1soCjuu_skTlbH_Gg8 passwd.tx
      / __|| '__| / _` | / __|| |/ /     | || |/\| |  | |
     | (__ | |   | (_| || (__ |   <  /\__/ /\  /\  /  | |
      \___||_|    \__,_| \___||_|\_\ \____/  \/  \/   \_/
-                                                          (v 1.0)
-[+] try key --> azyhuvhahxnzfedh
-[+] try key --> advadvsd
-[+] try key --> adca
-[+] try key --> advsdv
-[+] try key --> sfvs
-[+] try key --> fb
-[+] try key --> dsfbdfbdf
-[+] try key --> $admina$
-[+] found key successfully--> $admin$
+                                                          (v 1.1)
+
+[-] try key --> 000000
+[-] try key --> 1234
+[-] try key --> 123456
+[-] try key --> 12345678
+[-] try key --> user
+[-] try key --> test
+[+] found key successfully!!!  --> secret
 
 ```
 ## 参考
