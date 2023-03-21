@@ -1,7 +1,6 @@
 cffi
 colorama
 cryptography
-jwt
 pycparser
 PyJWT
 six
