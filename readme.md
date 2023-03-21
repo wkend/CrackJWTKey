@@ -1,7 +1,7 @@
 # JWT秘钥爆破脚本
 ## 用法
 ```python
-python3 -m pip install requirements.txt
+python3 -m pip install -r requirements.txt
 
 python3 CrackJWT.py jwt_str keys.txt
 
