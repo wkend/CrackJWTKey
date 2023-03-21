@@ -11,7 +11,7 @@ init(autoreset=True)
 def check_input():
     """检查输入"""
     if len(sys.argv) != 3:
-        print("Usage: "+sys.argv[0]+" jwt_str"+" passwd.txt")
+        print("Usage: "+sys.argv[0]+" jwt_str"+" keys.txt")
         exit(1)
 
 
