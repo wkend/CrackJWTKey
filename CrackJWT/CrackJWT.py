@@ -1,4 +1,4 @@
-#!/usr/bin/env python 3.5
+#!/usr/bin/env python 3
 # -*- coding: utf-8 -*-
 
 import sys
@@ -23,7 +23,7 @@ def print_sign():
      / __|| '__| / _` | / __|| |/ /     | || |/\| |  | |  
     | (__ | |   | (_| || (__ |   <  /\__/ /\  /\  /  | |  
      \___||_|    \__,_| \___||_|\_\ \____/  \/  \/   \_/  
-                                                          (v 1.0)                                               
+                                                          (v 1.1)                                               
     """
     print(BANNER)
 
@@ -36,7 +36,7 @@ def crack_key():
         for line in f:
             key = line.strip()
             try:
-                jwt.decode(jwt_str,verify=True,key=key)
+                jwt.decode(jwt_str,verify=True,key=key, algorithms=['HS256']).decode('utf-8')
                 print(termcolor.colored(r"[+]","green"),"found key successfully-->",termcolor.colored(key,"green"))
                 break
             except (
@@ -51,7 +51,6 @@ def crack_key():
                 continue
         else:
             print(r"[+] Done! no key was found\n")
-
 
 
 if __name__ == '__main__':
