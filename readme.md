@@ -1,4 +1,7 @@
 # JWT秘钥爆破脚本
+
+## 说明
+支持签名算法为`HS256`的密钥爆破
 ## 用法
 ```python
 python3 -m pip install -r requirements.txt
