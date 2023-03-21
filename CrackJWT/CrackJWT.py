@@ -50,7 +50,7 @@ def crack_key():
                 print(r"[-] try key -->", key)
                 continue
         else:
-            print(r"[+] Done! no key was found\n")
+            print(termcolor.colored(r"[+] Done! no key was found","yellow"))
 
 
 if __name__ == '__main__':
