@@ -36,7 +36,7 @@ def crack_key():
         for line in f:
             key = line.strip()
             try:
-                jwt.decode(jwt_str,verify=True,key=key, algorithms=['HS256']).decode('utf-8')
+                jwt.decode(jwt_str,verify=True,key=key, algorithms=['HS256'])
                 print(termcolor.colored(r"[+]","green"),"found key successfully-->",termcolor.colored(key,"green"))
                 break
             except (
